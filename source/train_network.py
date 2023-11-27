@@ -181,8 +181,12 @@ class Training():
 
         self.output_dim = output_size_iter
 
-        outputs = np.concatenate(outputs, axis=1)
+        for ind,o in enumerate(outputs[1]):
+            outputs[0][ind] = outputs[0][ind][:98]
+            outputs[1][ind] = outputs[1][ind][:98]
+            outputs[2][ind] = outputs[2][ind][:98]
 
+        outputs = np.concatenate(outputs, axis=1)
 
         if normalise_method == 'standardisation':
             def normalise_with_moments(x, epsilon=1e-20):

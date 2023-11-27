@@ -19,7 +19,8 @@ class Sampling():
         self.param_file = param_file
         self.param = Parameters(param_file)
         self.CONNECT_PATH = CONNECT_PATH
-        self.N_tasks, self.N_cpus_per_task = np.int64(sp.run(['./source/shell_scripts/number_of_tasks.sh'], stdout=sp.PIPE).stdout.decode('utf-8').split(','))
+        self.N_tasks = np.int64(sp.run(['./source/shell_scripts/number_of_tasks.sh'], stdout=sp.PIPE).stdout.decode('utf-8').split(',')[0])
+        self.N_cpus_per_task = np.int64(1)
         if self.param.sampling == 'lhc':
             self.data_path = f'data/{self.param.jobname}/N-{self.param.N}'
         elif self.param.sampling == 'iterative':

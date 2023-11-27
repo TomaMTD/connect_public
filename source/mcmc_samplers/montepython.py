@@ -90,7 +90,7 @@ class montepython(MCMC_base_class):
     def create_montepython_param(self, iteration):
         path = os.path.join(self.CONNECT_PATH, 'data', self.param.jobname, 'montepython_input')
         os.system(f"mkdir -p {path}")
-        with open('mcmc_plugin/mp_param_templates/connect_lite.param.template','r') as f:
+        with open('mcmc_plugin/mp_param_templates/connect.param.template','r') as f:
             with open(os.path.join(path, f'number_{iteration}.param'),'w') as g:
                 for line in f:
                     g.write(line)

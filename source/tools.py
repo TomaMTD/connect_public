@@ -31,7 +31,7 @@ def get_computed_cls(cosmo       # A computed CLASS model
             l.append(l[-1] + lin_increment)
 
     # create reduced dict of cls
-    ell = np.array(l)
+    ell = np.array(l)[:100]
     new_cls = {'ell':ell}
     for key, arr in cls.items():
         if key != 'ell':
