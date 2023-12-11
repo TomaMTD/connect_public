@@ -221,9 +221,9 @@ def get_node_with_most_cpus():
                 n+=1
         num_cpu[node_name] = n
 
-    max_node = max(num_cpu, key=num_cpu.get)
-    while '[' in max_node:
-        _ = num_cpu.pop(max_node)
-        max_node = max(num_cpu, key=num_cpu.get)
+    #max_node = max(num_cpu, key=num_cpu.get)
+    #while '[' in max_node:
+    #    _ = num_cpu.pop(max_node)
+    #    max_node = max(num_cpu, key=num_cpu.get)
 
-    return max_node
+    return "ccwpslurm0001" #max_node
